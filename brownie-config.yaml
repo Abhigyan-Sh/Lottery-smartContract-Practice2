@@ -1,0 +1,38 @@
+dependencies:
+ - OpenZeppelin/openzeppelin-contracts
+ - smartcontractkit/chainlink
+ - smartcontractkit/chainlink-brownie-contracts
+
+compiler:
+  solc:
+    remapping:
+      "@openZeppelin=OpenZeppelin/openzeppelin-contracts"
+      "@chainLink_V3=smartcontractkit/chainlink"
+      "@chainLink_vrf=smartcontractkit/chainlink-brownie-contracts"
+
+networks:
+  development:
+    ethTo_usd_priceFeed:
+    vrfCoordinator:
+    link:
+    verify: False
+  rinkeby:
+    ethTo_usd_priceFeed:
+    vrfCoordinator:
+    link:
+    verify: True
+  kovan:
+    ethTo_usd_priceFeed:
+    vrfCoordinator:
+    link:
+    verify: True
+  ropsten:
+    ethTo_usd_priceFeed:
+    vrfCoordinator:
+    link:
+    verify: True
+
+dotenv: .env
+
+wallets:
+  from_key: ${PRIVATE_KEY}
